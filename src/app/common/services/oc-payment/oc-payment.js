@@ -187,8 +187,10 @@ function OrderCloudPaymentService($rootScope, $q, $uibModal, OrderCloudSDK) {
                     paymentRequestBody = _.pick(newPayment, 'Type', 'Amount', 'DateCreated');
                     break;
                 case 'CreditCard':
-                    {
-                        paymentRequestBody = _.pick(newPayment, 'Type', 'Amount', 'DateCreated', 'CreditCardID');
+                    {   
+                        /*TODO: If this is no longer used for demos, remove newPayment.Accepted = true*/
+                        newPayment.Accepted = true;
+                        paymentRequestBody = _.pick(newPayment, 'Type', 'Amount', 'DateCreated', 'CreditCardID', 'Accepted');
                         break;
                     }
                 case 'SpendingAccount':
