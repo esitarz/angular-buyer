@@ -5,11 +5,10 @@
   "catalogid": "salonbuyer",
   "environment": "staging",
   "defaultstate": "home",
-    "html5mode": false,
+  "html5mode": false,
   "anonymous": false,
   "bootswatchtheme": "default",
-    "scope": [
-      "FullAccess",
+  "scope": [
       "BuyerReader", 
       "MeAdmin", 
       "MeXpAdmin", 
@@ -17,6 +16,7 @@
       "MeCreditCardAdmin", 
       "Shopper", 
       "PasswordReset",
+      "OrderAdmin",
       "BuyerImpersonation"
     ]
 }
