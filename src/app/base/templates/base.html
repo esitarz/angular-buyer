@@ -42,7 +42,7 @@
     </ul>
 </nav>
 <header>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-flex">
+    <nav class="c-navbar-default navbar navbar-default navbar-fixed-top navbar-flex">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
@@ -50,7 +50,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ui-sref="home" ng-if="!application.logoUrl">{{application.name()}}</a>
+                <a class="navbar-brand" ui-sref="home" ng-if="!application.logoUrl">
+                    <img src="assets/images/scs-badge.svg">
+                </a>
                 <a class="c-logo-display c-logo-display__nav" ng-if="application.logoUrl" ui-sref="home">
                     <img ng-src="{{application.logoUrl}}" alt="{{application.name()}}">
                 </a>
@@ -106,4 +108,4 @@
         </div>
     </nav>
 </header>
-<main ui-view class="container" cg-busy="application.stateLoading('base')"></main>
+<main ui-view ng-class="application.$state.includes('home') ? 'jumbotron' : 'container'" cg-busy="application.stateLoading('base')"></main>

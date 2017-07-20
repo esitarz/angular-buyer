@@ -73,6 +73,16 @@ function OrderCloudProductCarouselDirective() {
                     slickElement.on('init', function(slick) {
                         $scope.loading = false;
                     });
+                    
+                    slickElement.on('setPosition', function() {
+                        $(this).find('.c-product-card__img-wrap').height('auto');
+                        var image = $(this).find('img');
+                        var heights = _.pluck(image, 'height');
+                        var smallestHeight = Math.min.apply(Math, heights);
+                        var imgWrapHeight = smallestHeight + 11;
+                        $(this).find('.c-product-card__img-wrap').css('height', imgWrapHeight + 'px');
+                        $(this).find('img').css('height', smallestHeight + 'px');
+                    });
 
                     //Initiate the slick carousel with the merged slick options object
                     slickElement.slick(slickOptions);

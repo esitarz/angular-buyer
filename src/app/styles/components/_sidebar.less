@@ -4,10 +4,9 @@
         display: block;
         overflow-y: auto;
         height: calc(~"(100vh - @{body-padding-top})");
-    }
-    // overwrite bootstrap specificity
+    } // overwrite bootstrap specificity
     &.nav {
-        > li {
+        >li {
             a {
                 padding-top: (@grid-gutter-width / 4);
                 padding-bottom: (@grid-gutter-width / 4);
@@ -29,3 +28,16 @@
     }
     &__body {}
 }
+
+// TODO: Remove inline styles from the sidebar on Account page (app/account/templates/account.html)
+
+// .c-nav-sidebar {
+//     @media (min-width: 992px) {
+//         width: 263px;
+//         position: fixed;
+//         left: 390px;
+//         z-index: 1039;
+//         margin-top: 0px;
+//         top: 100px;
+//     }
+// }

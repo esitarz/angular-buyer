@@ -22,11 +22,8 @@
                     <form name="OCShippingRates">
                         <fieldset class="form-group" ng-repeat="shipment in checkoutShipping.shippingRates">
                             <label for="{{'Shipper' + $index}}" ng-if="checkoutShipping.shippingRates.length > 1">Shipment {{$index + 1}} ({{shipment.LineItemIDs.length}} Line Items)</label>
-                            <select id="{{'Shipper' + $index}}" class="form-control"
-                                    ng-model="shipment.SelectedShipper"
-                                    ng-options="shipper as (shipper.Description + ' (' + (shipper.Price | currency) + ')') for shipper in shipment.Rates"
-                                    ng-change="checkoutShipping.shipperSelected(base.currentOrder)"
-                                    required>
+                            <select id="{{'Shipper' + $index}}" class="form-control" ng-model="shipment.SelectedShipper" ng-options="shipper as (shipper.Description + ' (' + (shipper.Price | currency) + ')') for shipper in shipment.Rates"
+                                ng-change="checkoutShipping.shipperSelected(base.currentOrder)" required>
                             </select>
                         </fieldset>
                     </form>
@@ -58,7 +55,8 @@
                     <h4>Estimated Total: <b class="pull-right text-primary">{{base.currentOrder.Total | currency}}</b></h4>
                 </div>
                 <div class="panel-footer">
-                    <button type="button" class="btn btn-primary btn-block" ng-disabled="!checkout.shippingAddress || checkoutShipping.shippersAreLoading || OC_Checkout_Shipping.$invalid" ui-sref="checkout.payment">Next</button>
+                    <button type="button" class="btn btn-primary btn-block" ng-disabled="!checkout.shippingAddress || checkoutShipping.shippersAreLoading || OC_Checkout_Shipping.$invalid"
+                        ui-sref="checkout.payment">Next</button>
                 </div>
             </div>
         </div>

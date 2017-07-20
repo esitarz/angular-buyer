@@ -9,27 +9,27 @@ function HomeController(ocAppName, FeaturedProducts) {
 
 	vm.carousel = {
 		Settings: {
-			Interval: 5000,
+			Interval: 18000,
 			Active: 0,
 			NoWrap: false
 		},
 		Slides: [
 			{
-				URL: 'assets/images/carousel1.jpg', 
+				URL: 'assets/images/carousel_1_1920x900.jpg', 
 				Title: ocAppName.Watch(),
-				SubText: 'Welcome to the ' + ocAppName.Watch() + ' application',
+				SubText: 'Powered by Four51',
 				ID: 0
 			},
 			{
-				URL: 'assets/images/carousel2.jpg',
-				Title: 'Carousel Image Two',
-				SubText: 'This is the second image',
+				URL: 'assets/images/carousel_2_1920x900.jpg',
+				Title: ocAppName.Watch(),
+				SubText: 'Welcome to the ' + ocAppName.Watch() + ' application',
 				ID: 1
 			},
 			{
-				URL: 'assets/images/carousel3.jpg',
-				Title: 'Carousel Image Three',
-				SubText: 'This is the third image',
+				URL: 'assets/images/carousel_3_1920x900.jpg',
+				Title: ocAppName.Watch(),
+				SubText: 'Welcome to the ' + ocAppName.Watch() + ' application',
 				ID: 2
 			}
 		]
